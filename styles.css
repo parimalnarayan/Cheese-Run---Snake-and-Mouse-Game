@@ -4,3 +4,10 @@
 @media(max-width:850px){.header-inner{flex-wrap:wrap;padding:18px 0}.menu-toggle{display:block;margin-left:auto;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 12px;color:var(--ink);font:700 1rem 'DM Sans',sans-serif}.nav{display:none;order:3;width:100%;margin:0;align-items:stretch;flex-direction:column;gap:0}.nav.open{display:flex}.nav a{padding:10px 0}.header-inner>.button{display:none}.hero-grid,.split{grid-template-columns:1fr;gap:35px}.hero{padding:55px 0}.art{max-width:600px}.cards{grid-template-columns:1fr}.prose-layout{grid-template-columns:1fr;gap:30px}.aside{position:static;border-bottom:1px solid var(--line);padding-bottom:20px}.aside a{display:inline-block;margin-right:18px}.section{padding:65px 0}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}.cta{align-items:flex-start;flex-direction:column}.band-inner{align-items:flex-start;flex-direction:column;gap:5px}}
 @media(max-width:500px){.wrap{width:min(100% - 32px,1160px)}.footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}.footer-bottom{flex-direction:column}.cta,.note-art{padding:30px}.page-hero{padding:52px 0}}
 @media(max-width:850px){html:not(.js) .menu-toggle{display:none}html:not(.js) .nav{display:flex}}
+
+/* Keep the existing border radii as the fallback for older browsers. */
+@supports (corner-shape: squircle) {
+  :where(.brand-mark, .button, .menu-toggle, .art, .art-label, .card, .icon, .note-art, .cta, .callout, .contact-card) {
+    corner-shape: squircle;
+  }
+}
